@@ -1,25 +1,22 @@
-# Laboratorio: SVM vs. regresión logística
+## Resumen del laboratorio
 
-Predicción de churn con SVM y regresión logística, visualización t-SNE y optimización de hiperparámetros con GridSearchCV y BayesSearchCV.
+En este laboratorio abordamos la **predicción del abandono de clientes (*churn*)** de una empresa de telecomunicaciones. Comparamos SVM y regresión logística, optimizamos sus hiperparámetros y evaluamos su capacidad para identificar clientes que abandonan el servicio, priorizando el **recall** ante el desbalance de clases.
 
-## Iniciar
+## Índice de contenidos
 
-```bash
-cd ~/svm-vs-lr-lab
-uv sync
-uv run jupyter lab
-```
+1. **Preparación de los datos:** limpieza, tratamiento de valores faltantes, codificación y división estratificada en entrenamiento y test.
+2. **Visualización con t-SNE:** estandarización mediante z-score y exploración del conjunto de entrenamiento en dos dimensiones.
+3. **SVM con kernel RBF:** optimización de C y gamma mediante GridSearchCV y validación cruzada estratificada de 5 folds.
+4. **Regresión logística polinomial:** incorporación de cuadrados e interacciones y optimización de la regularización.
+5. **Optimización bayesiana:** búsqueda de hiperparámetros de SVM mediante BayesSearchCV.
+6. **Evaluación y reflexión:** comparación de métricas, matrices de confusión, limitaciones de los datos y posibles mejoras.
 
-Abre `SVM_vs_LR_Optimizacion.ipynb` y selecciona el kernel Python del proyecto. En VS Code selecciona `.venv/bin/python` como intérprete del cuaderno.
+## Objetivos de aprendizaje
 
-## Dependencias
-
-- NumPy y pandas: preparación de datos.
-- Matplotlib y seaborn: gráficos y mapas de calor.
-- scikit-learn: t-SNE, escalado, SVM, regresión logística y validación cruzada.
-- scikit-optimize: optimización bayesiana con BayesSearchCV.
-- JupyterLab e ipykernel: ejecución local del cuaderno.
-
-Se mantiene pandas en la serie 2.x por compatibilidad con el código original, que utiliza operaciones inplace sobre columnas. El archivo uv.lock fija las versiones instaladas.
-
-El cuaderno se copió sin modificar ni resolver las actividades. Su carga de datos requiere conexión a Internet.
+- Preparar datos tabulares para un problema de clasificación con clases desbalanceadas.
+- Aplicar t-SNE como herramienta de exploración visual.
+- Utilizar pipelines para ajustar la imputación y el escalado dentro de la validación cruzada.
+- Comparar búsqueda en cuadrícula y optimización bayesiana.
+- Comprender el efecto de la regularización y la expansión polinomial.
+- Interpretar recall, precisión, F1 y ROC AUC, relacionándolos con los errores del modelo.
+- Plantear mejoras considerando el umbral de decisión, el desbalance y la información disponible en los datos.
